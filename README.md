@@ -1,5 +1,4 @@
-GitHub Stars Dashboard
-======================
+# GitHub Stars Dashboard
 
 Adds your GitHub stars to the dashboard.
 
@@ -11,16 +10,30 @@ Adds your GitHub stars to the dashboard.
 
 ## Development
 
-### Running
+### Requirements
+
+Install web-ext.
 
 ```
 yarn global add web-ext
+```
+
+### Running
+
+```
 web-ext run
 ```
 
 ### Building
 
 ```
-yarn global add web-ext
 web-ext build
+```
+
+### Publishing
+
+Bump the version in `manifest.json`, then sign & publish the extension for review.
+
+```
+web-ext sign --api-key=foo --api-secret=bar
 ```
