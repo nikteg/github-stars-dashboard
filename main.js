@@ -1,16 +1,15 @@
 (function () {
-  var $starsUrl = document.querySelector(".header-nav-current-user a");
+  var username = document
+    .querySelector('meta[name="user-login"]')
+    .getAttribute("content");
 
-  if (!$starsUrl) {
+  if (!username) {
     console.debug("GitHub Stars Dashboard extension skipped");
-    console.debug(
-      'Could not find user dropdown $(".header-nav-current-user a")'
-    );
-
+    console.debug("Could not get username, maybe not logged in.");
     return;
   }
 
-  var starsUrl = $starsUrl.href + "?tab=stars";
+  var starsUrl = "https://github.com/" + username + "?tab=stars";
   var $dashboardSidebar = document.querySelector(
     ".dashboard-sidebar.js-sticky"
   );
